@@ -20,7 +20,7 @@ public class ApartamentReader {
 
         System.out.println("--Datos del apartamento--");
 
-        System.out.println("Plata:");
+        System.out.println("Planta:");
         int tier = scanner.nextInt();
         scanner.nextLine();
 
