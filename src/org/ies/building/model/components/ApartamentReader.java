@@ -33,11 +33,11 @@ public class ApartamentReader {
         int size = scanner.nextInt();
         scanner.nextLine();
 
-        Owner[] owners = new Owner[size];
+        Owner[] owner = new Owner[size];
 
         for (int i = 0; i < size; i++) {
 
-            owners[i] = ownerReader.read();
+            owner[i] = ownerReader.read();
 
         }
 
@@ -45,11 +45,10 @@ public class ApartamentReader {
 
                 tier,
                 door,
+                owner
 
 
         );
-
-
 
 
 
