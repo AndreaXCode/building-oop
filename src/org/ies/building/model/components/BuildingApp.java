@@ -1,7 +1,9 @@
 package org.ies.building.model.components;
 
 import org.ies.building.model.model.Apartament;
+import org.ies.building.model.model.Owner;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BuildingApp {
@@ -12,7 +14,6 @@ public class BuildingApp {
         Scanner scanner = new Scanner(System.in);
 
         //null  --> para iniciarla
-
 
         //Pide los datos del edificio
         System.out.println("--Datos del edificio--");
@@ -38,13 +39,9 @@ public class BuildingApp {
         }
 
         //Inicia un bucle de menú con las siguientes opciones:
-        //Muestra toda la información del edificio
-        //Muestra los apartamentos de la primera planta
-        //Muestra los datos del apartamento situado en una puerta y planta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
-        //Muestra los propietarios de un apartamento situado en una planta y puerta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
 
 
-        //Se declara la opcion fuera del bucl, y luego la leemos
+        //Se declara la opcion fuera del bucle, y luego la leemos
         int option;
 
              do {
@@ -59,22 +56,94 @@ public class BuildingApp {
                  option = scanner.nextInt();
                  scanner.nextLine();
 
+                 //Muestra toda la información del edificio
 
                  if (option == 1){
 
+                     System.out.println("Informacion del edifico:");
 
+                     System.out.println("La direccion es: " + address);
+
+                     System.out.println("Municipio: " + municipality);
+
+                     System.out.println("Apartamentos:");
+                     for (Apartament apartament: apartaments){
+
+                         System.out.println("Planta: " + apartament.getTier());
+                         System.out.println("Puerta: " + apartament.getDoor());
+
+                     }
+
+
+                 //Muestra los apartamentos de la primera planta
 
                  } else if (option == 2) {
 
-                     ApartamentReader apartamentReader;
+                     System.out.println("Apartamentos de la primera planta:");
 
-                     int tier = 1;
+                     for (Apartament apartament: apartaments){
+
+                         if (apartament.getTier() == 1){
+
+                         System.out.println("Puerta: " + apartament.getDoor());
+
+                        }
+                     }
+
+
+                 //Muestra los datos del apartamento situado en una puerta y planta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
 
                  } else if (option == 3) {
 
-                     ApartamentReader apartamentReader;
+                     System.out.println("Introduce una puerta:");
+                     String door = scanner.nextLine();
+
+                     System.out.println("Introduce una planta:");
+                     int tier = scanner.nextInt();
+                     scanner.nextLine();
+
+                     for (Apartament apartament: apartaments){
+
+                         if (apartament.getDoor().equals(door) && apartament.getTier() == tier){
+
+                             System.out.println("Puerta: " + apartament.getDoor());
+                             System.out.println("Planta: " + apartament.getTier());
+
+                         } else if (!apartament.getDoor().equals(door) && apartament.getTier() != tier) {
+
+                             System.out.println("No existe el apartamento");
+
+                         }
+                     }
+
+
+                 //Muestra los propietarios de un apartamento situado en una planta y puerta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
 
                  } else if (option == 4) {
+
+                     System.out.println("Introduce una planta");
+                     int tier = scanner.nextInt();
+                     scanner.nextLine();
+
+                     System.out.println("Introduce una puerta");
+                     String door = scanner.nextLine();
+
+                     for (Apartament apartament: apartaments){
+
+                         if (apartament.getTier() == tier && apartament.getDoor().equals(door)){
+
+                             //for (Owner owner: apartament.getOwners()){
+
+                                 System.out.println(Arrays.toString(apartament.getOwners()));
+
+                             //}
+
+                         }
+
+
+                     }
+
+
 
 
                  } else if (option == 5) {
@@ -87,10 +156,6 @@ public class BuildingApp {
                  }
 
              } while (option != 5);
-
-
-
-
 
 
 
