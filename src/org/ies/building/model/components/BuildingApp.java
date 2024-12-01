@@ -13,7 +13,7 @@ public class BuildingApp {
     public void run(){
         Scanner scanner = new Scanner(System.in);
 
-        //null  --> para iniciarla
+
 
         //Pide los datos del edificio
         System.out.println("--Datos del edificio--");
@@ -33,6 +33,7 @@ public class BuildingApp {
 
         for (int i = 0; i < size; i++) {
 
+            //null  --> para iniciarla
             final ApartamentReader apartamentReader = null;
             apartaments[i] = apartamentReader.read();
 
