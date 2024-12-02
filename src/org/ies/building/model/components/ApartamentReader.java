@@ -28,7 +28,7 @@ public class ApartamentReader {
         System.out.println("Puerta:");
         String door = scanner.nextLine();
 
-
+        //Esta bien
         System.out.println("¿Cuantos propietarios hay?");
         int size = scanner.nextInt();
         scanner.nextLine();

@@ -1,6 +1,7 @@
 package org.ies.building.model.components;
 
 import org.ies.building.model.model.Apartament;
+import org.ies.building.model.model.Building;
 import org.ies.building.model.model.Owner;
 
 import java.util.Arrays;
@@ -9,13 +10,22 @@ import java.util.Scanner;
 public class BuildingApp {
 
 
+    private final Scanner scanner;
+    private final BuildingReader buildingReader;
+    private final Building building;
+
+    public BuildingApp(Scanner scanner, BuildingReader buildingReader, Building building) {
+        this.scanner = scanner;
+        this.buildingReader = buildingReader;
+        this.building = building;
+    }
 
     public void run(){
         Scanner scanner = new Scanner(System.in);
 
 
-
         //Pide los datos del edificio
+
         System.out.println("--Datos del edificio--");
 
         System.out.println("Dirección");
@@ -61,35 +71,14 @@ public class BuildingApp {
 
                  if (option == 1){
 
-                     System.out.println("Informacion del edifico:");
-
-                     System.out.println("La direccion es: " + address);
-
-                     System.out.println("Municipio: " + municipality);
-
-                     System.out.println("Apartamentos:");
-                     for (Apartament apartament: apartaments){
-
-                         System.out.println("Planta: " + apartament.getTier());
-                         System.out.println("Puerta: " + apartament.getDoor());
-
-                     }
+                     building.showInfo();
 
 
                  //Muestra los apartamentos de la primera planta
 
                  } else if (option == 2) {
 
-                     System.out.println("Apartamentos de la primera planta:");
-
-                     for (Apartament apartament: apartaments){
-
-                         if (apartament.getTier() == 1){
-
-                         System.out.println("Puerta: " + apartament.getDoor());
-
-                        }
-                     }
+                     building.showFirtApartament();
 
 
                  //Muestra los datos del apartamento situado en una puerta y planta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
