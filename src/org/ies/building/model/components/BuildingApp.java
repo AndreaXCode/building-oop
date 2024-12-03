@@ -92,19 +92,8 @@ public class BuildingApp {
                      int tier = scanner.nextInt();
                      scanner.nextLine();
 
-                     for (Apartament apartament: apartaments){
+                     building.showSpecificApartament();
 
-                         if (apartament.getDoor().equals(door) && apartament.getTier() == tier){
-
-                             System.out.println("Puerta: " + apartament.getDoor());
-                             System.out.println("Planta: " + apartament.getTier());
-
-                         } else if (!apartament.getDoor().equals(door) && apartament.getTier() != tier) {
-
-                             System.out.println("No existe el apartamento");
-
-                         }
-                     }
 
 
                  //Muestra los propietarios de un apartamento situado en una planta y puerta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
@@ -120,15 +109,7 @@ public class BuildingApp {
 
                      for (Apartament apartament: apartaments){
 
-                         if (apartament.getTier() == tier && apartament.getDoor().equals(door)){
 
-                             //for (Owner owner: apartament.getOwners()){
-
-                                 System.out.println(Arrays.toString(apartament.getOwners()));
-
-                             //}
-
-                         }
 
 
                      }
@@ -154,4 +135,13 @@ public class BuildingApp {
 
 
 
-}
+    // if (apartament.getTier() == tier && apartament.getDoor().equals(door)){
+//
+//                             //for (Owner owner: apartament.getOwners()){
+//
+//                                 System.out.println(Arrays.toString(apartament.getOwners()));
+//
+//                             }
+//
+//                         }
+
