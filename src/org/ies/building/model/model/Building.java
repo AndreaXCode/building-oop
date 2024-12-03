@@ -121,7 +121,30 @@ public class Building {
 
     }
 
+    //Muestra los propietarios de un apartamento situado en una planta y puerta dados.
+    // Si no se encuentra muestra el mensaje "No existe el apartamento"
     //Crear un método que devuelva un apartamento
+    public Apartament findApartament(int tier, String door){
+
+        for (Apartament apartament : apartaments){
+
+            if (apartament.getDoor().equals(door) && apartament.getTier() == tier){
+
+                return apartament;
+
+            } else {
+
+                System.out.println("No existe el apartamento");
+            }
+
+        }
+
+
+
+
+
+
+    }
 
 
     public String getAddress() {

@@ -1,10 +1,9 @@
 package org.ies.building.model.components;
 
-import org.ies.building.model.model.Apartament;
-import org.ies.building.model.model.Building;
-import org.ies.building.model.model.Owner;
 
-import java.util.Arrays;
+import org.ies.building.model.model.Building;
+
+
 import java.util.Scanner;
 
 public class BuildingApp {
@@ -80,7 +79,7 @@ public class BuildingApp {
                 System.out.println("Introduce una puerta");
                 String door = scanner.nextLine();
 
-                 (building.nameOfMet(tier, door))
+                 building.findApartament(tier, door);
 
 
             } else if (option == 5) {
@@ -99,13 +98,5 @@ public class BuildingApp {
 
 }
 
-// if (apartament.getTier() == tier && apartament.getDoor().equals(door)){
-//
-//                             //for (Owner owner: apartament.getOwners()){
-//
-//                                 System.out.println(Arrays.toString(apartament.getOwners()));
-//
-//                             }
-//
-//                         }
+
 
