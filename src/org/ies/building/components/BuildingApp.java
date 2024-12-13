@@ -1,7 +1,7 @@
-package org.ies.building.model.components;
+package org.ies.building.components;
 
 
-import org.ies.building.model.model.Building;
+import org.ies.building.model.Building;
 
 
 import java.util.Scanner;
@@ -31,7 +31,7 @@ public class BuildingApp {
         do {
 
             System.out.println("1.Mostrar toda la información del edificio");
-            System.out.println("2.Muestra los apartamentos de la primera planta");
+            System.out.println("2.Dado una planta y una puerto, devuelve el apartamento en esa planta y puerta");
             System.out.println("3.Muestra los datos del apartamento");
             System.out.println("4.Muestra los propietarios de un apartamento");
             System.out.println("5.Salir");
@@ -47,28 +47,35 @@ public class BuildingApp {
                 building.showInfo();
 
 
-                //Muestra los apartamentos de la primera planta
+                //Dado una planta y una puerto, devuelve el apartamento en esa planta y puerta. Si no existe dicho apartamento devuelve null.
 
             } else if (option == 2) {
 
-                building.showFirtApartament();
+                System.out.println("Planta: ");
+                int tier = scanner.nextInt();
+                scanner.nextLine();
+
+                System.out.println("Puerta: ");
+                String door = scanner.nextLine();
 
 
-                //Muestra los datos del apartamento situado en una puerta y planta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
+                building.findApartament(tier, door);
+
+
+
+                //Dado un número de planta, muestra los apartamentos de esa planta
 
             } else if (option == 3) {
 
-                System.out.println("Introduce una puerta:");
-                String door = scanner.nextLine();
 
                 System.out.println("Introduce una planta:");
                 int tier = scanner.nextInt();
                 scanner.nextLine();
 
-                building.showSpecificApartament(door, tier);
+                building.showTierApartament(tier);
 
 
-                //Muestra los propietarios de un apartamento situado en una planta y puerta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
+                //Dado una planta y una puerto, devuelve los propietarios del apartamento de esa puerta y planta. Si no existe dicho apartamento devuelve null.
 
             } else if (option == 4) {
 
@@ -79,9 +86,9 @@ public class BuildingApp {
                 System.out.println("Introduce una puerta");
                 String door = scanner.nextLine();
 
-                 building.findApartament(tier, door);
+                 building.findOwners(tier, door);
 
-
+//---------------------------------------------
             } else if (option == 5) {
 
                 System.out.println("Saliendo del menu...");

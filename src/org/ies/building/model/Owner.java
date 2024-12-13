@@ -1,4 +1,4 @@
-package org.ies.building.model.model;
+package org.ies.building.model;
 
 import java.util.Objects;
 
@@ -12,6 +12,15 @@ public class Owner {
         this.nif = nif;
         this.name = name;
         this.surname = surname;
+    }
+
+    public void showInfo(){
+
+        System.out.println("--Informacion del propietario--");
+
+        System.out.print("Nombre: " + name);
+        System.out.print("Apellido: " + surname);
+        System.out.print("NIF: " + name);
     }
 
 

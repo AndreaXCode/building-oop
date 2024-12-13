@@ -1,4 +1,4 @@
-package org.ies.building.model.model;
+package org.ies.building.model;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -8,6 +8,26 @@ public class Apartament {
     private int tier;
     private String door;
     private Owner[] owners;
+
+
+    public void showInfo() {
+
+        System.out.println("--Informacion del apartamento--");
+
+        System.out.print("Planta: " + tier);
+        System.out.print("Puerta: " + door);
+
+        System.out.println("Propietarios:");
+
+        for (Owner owner : owners) {
+
+            owner.showInfo();
+
+        }
+
+    }
+
+
 
 
     public Apartament(int tier, String door, Owner[] owners) {

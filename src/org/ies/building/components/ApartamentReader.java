@@ -1,7 +1,7 @@
-package org.ies.building.model.components;
+package org.ies.building.components;
 
-import org.ies.building.model.model.Apartament;
-import org.ies.building.model.model.Owner;
+import org.ies.building.model.Apartament;
+import org.ies.building.model.Owner;
 
 import java.util.Scanner;
 
@@ -20,26 +20,26 @@ public class ApartamentReader {
 
         System.out.println("--Datos del apartamento--");
 
-        System.out.println("Planta:");
+        System.out.print("Planta:");
         int tier = scanner.nextInt();
         scanner.nextLine();
 
 
-        System.out.println("Puerta:");
+        System.out.print("Puerta:");
         String door = scanner.nextLine();
 
-        //Esta bien
-        System.out.println("¿Cuantos propietarios hay?");
-        int size = scanner.nextInt();
-        scanner.nextLine();
+
+        int size = readOwners();
 
         Owner[] owner = new Owner[size];
 
         for (int i = 0; i < size; i++) {
 
-            owner[i] = ownerReader.read();
+           owner[i] = ownerReader.read();
 
         }
+
+
 
         return new Apartament(
 
@@ -51,6 +51,21 @@ public class ApartamentReader {
         );
 
 
+    }
+
+    private int readOwners(){
+
+        int size;
+
+        do {
+
+            System.out.print("¿Cuantos propietarios hay?");
+            size = scanner.nextInt();
+            scanner.nextLine();
+
+        } while (size <= 0);
+
+        return size;
 
     }
 }
