@@ -34,7 +34,10 @@ public class BuildingApp {
             System.out.println("2.Dado una planta y una puerto, devuelve el apartamento en esa planta y puerta");
             System.out.println("3.Muestra los datos del apartamento");
             System.out.println("4.Muestra los propietarios de un apartamento");
-            System.out.println("5.Salir");
+            System.out.println("5.Muestra los datos del apartamento situado en una puerta y planta dados");
+            System.out.println("6.Muestra los propietarios de un apartamento situado en una planta y puerta dados. Si no se encuentra muestra el mensaje No existe el apartamento");
+            System.out.println("7.Salir");
+
 
             //Se lee la opcion
             option = scanner.nextInt();
@@ -88,8 +91,42 @@ public class BuildingApp {
 
                  building.findOwners(tier, door);
 
-//---------------------------------------------
+
+
+
+             //Muestra los propietarios de un apartamento situado en una planta y puerta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
+
             } else if (option == 5) {
+
+
+                System.out.println("Introduce una planta");
+                int tier = scanner.nextInt();
+                scanner.nextLine();
+
+                System.out.println("Introduce una puerta");
+                String door = scanner.nextLine();
+
+                building.showSpecificApartament(tier, door);
+
+
+
+
+            } else if (option == 6) {
+
+
+                System.out.println("Introduce una planta");
+                int tier = scanner.nextInt();
+                scanner.nextLine();
+
+                System.out.println("Introduce una puerta");
+                String door = scanner.nextLine();
+
+
+                building.showSpecificOwner(door, tier);
+
+
+
+            } else if (option == 7) {
 
                 System.out.println("Saliendo del menu...");
 
@@ -98,7 +135,7 @@ public class BuildingApp {
                 System.out.println("Opcion invalida");
             }
 
-        } while (option != 5);
+        } while (option != 7);
 
 
     }

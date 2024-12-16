@@ -1,4 +1,5 @@
 import org.ies.building.components.ApartamentReader;
+import org.ies.building.components.BuildingApp;
 import org.ies.building.components.BuildingReader;
 import org.ies.building.components.OwnerReader;
 
@@ -11,11 +12,10 @@ public class Main {
         var scanner = new Scanner(System.in);
         var ownerReader = new OwnerReader(scanner);
         var apartamentReader = new ApartamentReader(scanner, ownerReader);
-        BuildingReader buildingReader = new BuildingReader(scanner, apartamentReader);
+        var buildingReader = new BuildingReader(scanner, apartamentReader);
+        var buildingApp = new BuildingApp(scanner, buildingReader);
 
-        var building = buildingReader.read();
-
-        System.out.println(building);
+        buildingApp.run();
 
     }
 }

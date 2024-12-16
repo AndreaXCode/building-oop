@@ -111,24 +111,6 @@ public class Building {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Muestra los propietarios de un apartamento situado en una planta y puerta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
     public void showSpecificOwner(String door, int tier) {
 
