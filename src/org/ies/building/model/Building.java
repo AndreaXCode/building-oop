@@ -212,7 +212,7 @@ public class Building {
             //Dentro del for, usamos la condición if  --> donde si el apartamento tiene la puerta y la planta dada, mostrará su información
             if (apartament.getDoor().equals(door) && apartament.getTier() == tier) {
 
-                System.out.println("--Datos del apartamento:--");
+                System.out.println("--Datos del apartamento--");
                 //Me faltan datos
 
                 System.out.println("Puerta: " + apartament.getDoor());

@@ -21,10 +21,10 @@ public class BuildingReader {
 
         System.out.println("--Datos del edificio--");
 
-        System.out.print("Dirección:");
+        System.out.print("Dirección: ");
         String address = scanner.nextLine();
 
-        System.out.print("Municipio:");
+        System.out.print("Municipio: ");
         String municipality = scanner.nextLine();
 
 
@@ -65,7 +65,7 @@ public class BuildingReader {
 
         do {
 
-            System.out.print("¿Cuántos apartamentos hay?");
+            System.out.print("¿Cuántos apartamentos hay? ");
             size = scanner.nextInt();
             scanner.nextLine();
 
