@@ -6,13 +6,13 @@ import org.ies.building.model.Building;
 
 import java.util.Scanner;
 
-public class BuildingApp {
+public class BuildingMenuApp {
 
 
     private final Scanner scanner;
     private final BuildingReader buildingReader;
 
-    public BuildingApp(Scanner scanner, BuildingReader buildingReader) {
+    public BuildingMenuApp(Scanner scanner, BuildingReader buildingReader) {
         this.scanner = scanner;
         this.buildingReader = buildingReader;
     }

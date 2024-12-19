@@ -45,11 +45,11 @@ public class Building {
     //return type  --> tipo de retorno (Apartament)
     //parametros  --> int tier, String door
 
-    public Apartament findApartament(int tier, String door){
+    public Apartament findApartament(int tier, String door) {
 
-        for (Apartament apartament : apartaments){
+        for (Apartament apartament : apartaments) {
 
-            if (apartament.getDoor().equals(door) && apartament.getTier() == tier){
+            if (apartament.getDoor().equals(door) && apartament.getTier() == tier) {
 
 
                 return apartament;
@@ -61,15 +61,14 @@ public class Building {
         return null;
 
 
-
     }
 
     //showFloorApartments(int floor): Dado un número de planta, muestra los apartamentos de esa planta
-    public void showFloorApartments(int tier){
+    public void showFloorApartments(int tier) {
 
-        for (Apartament apartament: apartaments){
+        for (Apartament apartament : apartaments) {
 
-            if (apartament.getTier() == tier){
+            if (apartament.getTier() == tier) {
 
                 System.out.println(apartament);
 
@@ -81,34 +80,27 @@ public class Building {
         }
 
 
-
     }
 
 
     //findOwners(int floor, String door): Dado una planta y una puerta, devuelve los propietarios del apartamento de esa puerta y planta.
     // Si no existe dicho apartamento devuelve null.
 
-    public Owner[] findOwners(int tier, String door){
+    public Owner[] findOwners(int tier, String door) {
 
-       var apartament = findApartament(tier, door);
+        var apartament = findApartament(tier, door);
 
-       if (apartament == null){
+        if (apartament == null) {
 
-           return null;
-       } else {
+            return null;
+        } else {
 
-           return apartament.getOwners();
+            return apartament.getOwners();
 
-       }
-
-
-
-
-
+        }
 
 
     }
-
 
 
     //Muestra los propietarios de un apartamento situado en una planta y puerta dados. Si no se encuentra muestra el mensaje "No existe el apartamento"
@@ -146,11 +138,11 @@ public class Building {
 
 
     //Dado un número de planta, muestra los apartamentos de esa planta
-    public void showTierApartament(int tier){
+    public void showTierApartament(int tier) {
 
-        for (Apartament apartament: apartaments){
+        for (Apartament apartament : apartaments) {
 
-            if (apartament.getTier() == tier){
+            if (apartament.getTier() == tier) {
 
                 System.out.println("--Apartamentos de la planta " + tier + "--");
                 System.out.println(apartament);
@@ -167,39 +159,6 @@ public class Building {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Muestra los apartamentos de la primera planta
-    public void showFirtApartament() {
-
-        //Con sout indicamos lo que se va a mostrar
-        System.out.println("--Apartamentos de la primera planta--");
-
-        //Como quiero buscar los apartamentos de la primera planta, hay que usar un for each para recorrerlo
-        for (Apartament apartament : apartaments) {
-
-            //Dentro del for, usamos la condición if  --> si la planta es 1 mostrará los apartamentos, las puertas
-            if (apartament.getTier() == 1) {
-
-                System.out.println("Puerta: " + apartament.getDoor());
-
-            } //else-if??
-
-        }
-    }
-
     //Muestra los datos del apartamento situado en una puerta y planta dados.
     //Si no se encuentra muestra el mensaje "No existe el apartamento"
 
@@ -207,45 +166,30 @@ public class Building {
     public void showInfoSpecificApartament(String door, int tier) {
 
         //Hacemos un for each para buscar el apartamento que queremos
-        for (Apartament apartament : apartaments) {
 
-            //Dentro del for, usamos la condición if  --> donde si el apartamento tiene la puerta y la planta dada, mostrará su información
-            if (apartament.getDoor().equals(door) && apartament.getTier() == tier) {
+        var apartament = findApartament(tier, door);
+        if (apartament != null) {
 
-                System.out.println("--Datos del apartamento--");
-                //Me faltan datos
+            apartament.showInfo();
 
-                System.out.println("Puerta: " + apartament.getDoor());
-                System.out.println("Planta: " + apartament.getTier());
+        } else {
 
-
-                //Pero si esto es falso, mostrará que no se ha encontrado el apartamento pedido
-            } else if (!apartament.getDoor().equals(door) && apartament.getTier() != tier) {
-
-                System.out.println("No existe el apartamento");
-            }
+            System.out.println("No existe el apartamento");
         }
+
     }
-
-
 
 
     //Muestra los propietarios de un apartamento situado en una planta y puerta dados.
     // Si no se encuentra muestra el mensaje "No existe el apartamento"
     //Crear un método que devuelva un apartamento
 
-    public void showSpecificApartament(int tier, String door){
+    public void showSpecificApartament(int tier, String door) {
 
         findApartament(tier, door);
 
 
-
-
     }
-
-
-
-
 
 
     public String getAddress() {
